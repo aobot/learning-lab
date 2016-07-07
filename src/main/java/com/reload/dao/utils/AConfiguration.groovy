@@ -1,4 +1,4 @@
-package com.plugin.utils
+package com.reload.dao.utils
 
 import org.apache.ibatis.mapping.MappedStatement
 import org.apache.ibatis.session.Configuration

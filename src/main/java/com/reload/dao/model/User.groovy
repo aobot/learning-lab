@@ -1,4 +1,4 @@
-package com.plugin.model
+package com.reload.dao.model
 
 /**
  * Created by @ssysong.ssy  2016-06-03 16:26

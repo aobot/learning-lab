@@ -1,5 +1,6 @@
-package com.plugin
-import com.plugin.model.User
+package com.reload.dao
+
+import com.reload.dao.model.User
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test
 import org.junit.runner.RunWith

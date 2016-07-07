@@ -1,6 +1,6 @@
-package com.plugin
+package com.reload.dao
 
-import com.plugin.dao.UserDao
+import com.reload.dao.dao.UserDao
 import org.apache.ibatis.executor.CachingExecutor
 import org.apache.ibatis.plugin.Interceptor
 import org.apache.ibatis.plugin.Invocation

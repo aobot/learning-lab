@@ -1,7 +1,7 @@
-package com.plugin
+package com.reload.dao
 
-import com.plugin.dao.UserDao
-import com.plugin.model.User
+import com.reload.dao.model.User
+import com.reload.dao.dao.UserDao
 import org.springframework.stereotype.Service
 
 import javax.annotation.Resource

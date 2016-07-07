@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.plugin.utils
+package com.reload.dao.utils
 
 import org.apache.ibatis.builder.xml.XMLConfigBuilder
 import org.apache.ibatis.executor.ErrorContext
@@ -446,8 +446,8 @@ public class ASqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, I
                     continue;
                 }
 
-                final Resource ml = mapperLocation;
-                final Configuration config = configuration;
+                Resource ml = mapperLocation;
+                Configuration config = configuration;
                 try {
                     Runnable runner = new Runnable() {
                         @Override
