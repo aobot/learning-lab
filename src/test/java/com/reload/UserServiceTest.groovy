@@ -1,6 +1,6 @@
-package com.reload.dao
+package com.reload
 
-import com.reload.dao.model.User
+import com.reload.model.User
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
  * Created by @ssysong.ssy  2016-06-03 16:22
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:plugin/plugin.xml")
+@ContextConfiguration(locations = "classpath*:reload/reload.xml")
 class UserServiceTest {
     @Resource
     UserService userService
