@@ -1,4 +1,4 @@
-package com.reload.dao
+package com.reload
 
 import org.apache.ibatis.cache.Cache
 
