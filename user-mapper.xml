@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.plugin.dao.UserDao">
-    <insert id="add" parameterType="com.plugin.model.User">
-        INSERT into user (name ,age) VALUES (#{name},#{age})
+<mapper namespace="com.reload.dao.dao.UserDao">
+    <cache type=""
+    <insert id="add" parameterType="com.reload.dao.model.User">
+        INSERT into user (name ,age) VALUES ('xxx2',1)
     </insert>
-
 </mapper>
