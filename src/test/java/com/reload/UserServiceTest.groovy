@@ -1,5 +1,4 @@
 package com.reload
-
 import com.reload.model.User
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test
@@ -22,7 +21,7 @@ class UserServiceTest {
 
     @Test
     void testGetUserDao() {
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100000; i++) {
             String name = RandomStringUtils.random(3, true, false)
             def age = ThreadLocalRandom.current().nextInt(50)
             userService.add(new User(name: name, age: age))

@@ -6,4 +6,5 @@ import com.reload.model.User
 interface UserDao {
 //    @Insert("insert into user( name,age) values(#{name},#{age})")
     void add(User user)
+    void add2(User user)
 }
