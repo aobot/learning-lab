@@ -32,6 +32,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Clinton Begin
@@ -78,12 +79,17 @@ public class AXMLMapperBuilder extends BaseBuilder {
         try {
             Field field = configuration.getClass().getDeclaredField("mappedStatements");
             field.setAccessible(true);
-            ((HashMap) field.get(configuration)).clear();
+            Map knownStat =(ConcurrentHashMap) field.get(configuration);
+            System.out.println("before : " + knownStat.size());
+            knownStat.clear();
+            System.out.println("after : " + knownStat.size());
+
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+
 
         configurationElement(parser.evalNode("/mapper"));
         configuration.addLoadedResource(resource);
