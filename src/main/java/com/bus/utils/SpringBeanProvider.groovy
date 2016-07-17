@@ -22,4 +22,8 @@ class SpringBeanProvider implements ApplicationContextAware {
     def getBean(String name) {
         return CONTEXT.getBean(name)
     }
+
+    def getBean(Class clazz) {
+        return CONTEXT.getBean(clazz)
+    }
 }

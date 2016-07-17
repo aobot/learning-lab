@@ -8,7 +8,7 @@
     </parameterMap>
 
     <insert id="add" parameterType="com.reload.model.User">
-        INSERT into user (name ,age) VALUES ('aaa',#{age})
+        INSERT into user (name ,age) VALUES (#{name},2)
     </insert>
 
 </mapper>

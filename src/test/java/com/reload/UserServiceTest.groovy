@@ -24,7 +24,6 @@ class UserServiceTest {
     @Test
     void testGetUserDao() {
 
-        TimeUnit.SECONDS.sleep(2)
         def executors = Executors.newFixedThreadPool(10)
         for (int j = 0; j < 10 ; j++) {
             def runnable = new Runnable() {

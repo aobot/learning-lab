@@ -8,6 +8,7 @@ import java.lang.reflect.Field
 /**
  * Created by @ssysong.ssy  2016-07-17 15:50
  */
+
 class AConfiguration extends Configuration {
     volatile boolean initialized = false
 
@@ -56,5 +57,9 @@ class AConfiguration extends Configuration {
         initialized = true
     }
 
+    @Override
+    boolean isResourceLoaded(String resource) {
+        return false;
+    }
 }
 
