@@ -3,12 +3,12 @@
 
 <mapper namespace="com.reload.dao.UserDao">
 
-    <parameterMap id="p2" type="java.lang.IncompatibleClassChangeError" >
+    <parameterMap id="p" type="java.lang.IncompatibleClassChangeError" >
 
     </parameterMap>
 
     <insert id="add" parameterType="com.reload.model.User">
-        INSERT into user (name ,age) VALUES (#{name},'2222')
+        INSERT into user (name ,age) VALUES ('aaa',#{age})
     </insert>
 
 </mapper>
