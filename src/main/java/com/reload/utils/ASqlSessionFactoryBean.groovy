@@ -447,7 +447,7 @@ public class ASqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, I
                 Resource ml = mapperLocation;
                 AConfiguration config = configuration;
                 try {
-                    Runnable runner = new Runnable() {
+                    Runnable xmlMapperReloader = new Runnable() {
                         @Override
                         void run() {
                             println "==   ${new Date()}  =="
@@ -461,7 +461,7 @@ public class ASqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, I
                         }
                     };
 
-                    scheduledExecutor.scheduleAtFixedRate(runner, 1, 5, TimeUnit.SECONDS);
+                    scheduledExecutor.scheduleAtFixedRate(xmlMapperReloader, 0, 5, TimeUnit.SECONDS);
 
                 } catch (Exception e) {
                     throw new NestedIOException("Failed to parse mapping resource: '" + mapperLocation + "'", e);

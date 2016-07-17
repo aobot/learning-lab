@@ -3,7 +3,7 @@
 
 <mapper namespace="com.reload.dao.UserDao">
     <insert id="add" parameterType="com.reload.model.User">
-        INSERT into user (name ,age) VALUES ('2xx',#{age})
+        INSERT into user (name ,age) VALUES (#{name},#{age})
     </insert>
 
 </mapper>

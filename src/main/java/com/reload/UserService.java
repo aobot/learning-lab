@@ -19,8 +19,7 @@ class UserService {
         try {
             userDao.add(user);
         } catch (Exception e) {
-//            e.printStackTrace();
-            System.out.println(e.getCause());
+            e.printStackTrace();
         }
     }
 }
