@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class AConfiguration extends Configuration {
 
     protected final Map<String, MappedStatement> mappedStatements = new ConcurrentHashMap<String, MappedStatement>();
-    protected final Map<String, MappedStatement> backUp = new ConcurrentHashMap<String, MappedStatement>();
 
     public AConfiguration(Configuration configuration) {
         this(configuration.getEnvironment());
@@ -22,46 +21,45 @@ public class AConfiguration extends Configuration {
     }
 
 
+    @Override
     public void addMappedStatement(MappedStatement ms) {
         mappedStatements.put(ms.getId(), ms);
-        backUp.put(ms.getId(), ms);
     }
 
+    @Override
     public Collection<String> getMappedStatementNames() {
         buildAllStatements();
         return mappedStatements.keySet();
     }
 
+    @Override
     public Collection<MappedStatement> getMappedStatements() {
         buildAllStatements();
         return mappedStatements.values();
     }
 
-
+    @Override
     public MappedStatement getMappedStatement(String id) {
         MappedStatement stat = this.getMappedStatement(id, true);
         return stat;
     }
 
+    @Override
     public MappedStatement getMappedStatement(String id, boolean validateIncompleteStatements) {
         if (validateIncompleteStatements) {
             buildAllStatements();
         }
 
         MappedStatement stat = this.mappedStatements.get(id);
-        if (stat == null) {
-            System.out.println("read backup");
-            stat = this.backUp.get(id);
-        }
-
         return stat;
     }
 
-
+    @Override
     public boolean hasStatement(String statementName) {
         return hasStatement(statementName, true);
     }
 
+    @Override
     public boolean hasStatement(String statementName, boolean validateIncompleteStatements) {
         if (validateIncompleteStatements) {
             buildAllStatements();
