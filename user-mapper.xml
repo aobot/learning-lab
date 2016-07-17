@@ -2,8 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.reload.dao.UserDao">
+
+    <parameterMap id="p2" type="java.lang.IncompatibleClassChangeError" >
+
+    </parameterMap>
+
     <insert id="add" parameterType="com.reload.model.User">
-        INSERT into user (name ,age) VALUES (#{name},#{age})
+        INSERT into user (name ,age) VALUES (#{name},'2222')
     </insert>
 
 </mapper>
