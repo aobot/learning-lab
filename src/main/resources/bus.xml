@@ -5,17 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.bus"/>
+    <context:component-scan base-package="eventbus.test"/>
 
-    <bean class="com.google.common.eventbus.EventBus" id="bus" />
+    <!--<bean class="com.google.common.eventbus.EventBus" id="messageCenter" />-->
 
-    <!--<bean class="com.google.common.eventbus.AsyncEventBus" id="bus">-->
-        <!--<constructor-arg name="identifier" value="asy"/>-->
-        <!--<constructor-arg name="executor">-->
-            <!--<bean class="java.util.concurrent.Executors" factory-method="newFixedThreadPool">-->
-                <!--<constructor-arg value="4"/>-->
-            <!--</bean>-->
-        <!--</constructor-arg>-->
-    <!--</bean>-->
+    <bean class="com.google.common.eventbus.AsyncEventBus" id="bus">
+        <constructor-arg name="identifier" value="asy"/>
+        <constructor-arg name="executor">
+            <bean class="java.util.concurrent.Executors" factory-method="newCachedThreadPool"/>
+        </constructor-arg>
+    </bean>
 
 </beans>
