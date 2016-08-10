@@ -1,6 +1,7 @@
 package eventbus.test.event;
 
-import eventbus.test.Producer;
+import eventbus.test.Producer
+import eventbus.test.ScheduleTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -20,7 +21,7 @@ public class AdOnlineEventTest2 {
 
     @Test
     public void getMessage() throws Exception {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <  10; i++) {
             producer.send(new AdOnlineEvent(i as String,new Date()));
         }
         System.out.println("send done");

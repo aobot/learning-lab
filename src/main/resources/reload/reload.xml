@@ -10,7 +10,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/deal"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/temp"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
         <property name="initialSize" value="3" />
@@ -23,9 +23,15 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="logAbandoned" value="true" />
     </bean>
 
-    <bean class="com.reload.utils.ASqlSessionFactoryBean" id="sqlSessionFactory">
+    <!--<bean class="com.reload.utils.ASqlSessionFactoryBean" id="sqlSessionFactory">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="mapperLocations" value="classpath*:reload/user-mapper.xml"/>-->
+        <!--<property name="configLocation" value="classpath:reload/myBatis-config.xml"/>-->
+    <!--</bean>-->
+
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="file:/Users/ssysong/git/learning/user-mapper.xml"/>
+        <property name="mapperLocations" value="classpath*:reload/user-mapper.xml"/>
         <property name="configLocation" value="classpath:reload/myBatis-config.xml"/>
     </bean>
 
