@@ -31,7 +31,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath*:reload/user-mapper.xml"/>
+        <property name="mapperLocations" value="classpath*:reload/*-mapper.xml"/>
         <property name="configLocation" value="classpath:reload/myBatis-config.xml"/>
     </bean>
 

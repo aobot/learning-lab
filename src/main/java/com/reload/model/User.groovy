@@ -9,6 +9,4 @@ import groovy.transform.Canonical
 class User {
     int id
     String name
-
-    Extra extra
 }

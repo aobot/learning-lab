@@ -1,8 +1,5 @@
 package com.reload
 
-import com.reload.model.Extra
-import com.reload.model.User
-import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.test.context.ContextConfiguration
@@ -23,8 +20,9 @@ class UserServiceTest {
     void testGetUserDao() {
 //        for (int i = 0; i < 10; i++) {
 //            userService.add(new User(i, RandomStringUtils.random(3, true, false),
-//                    new Extra('extra-' + RandomStringUtils.random(3, true, false))))
+//                    new Extra('y')))
 //        }
-        println userService.getAll()
+        println userService.getAll().join("\n")
+
     }
 }

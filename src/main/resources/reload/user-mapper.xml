@@ -3,10 +3,26 @@
 
 <mapper namespace="com.reload.dao.UserDao">
 
-    <resultMap id="studentMap" type="com.reload.model.User" >
-        <result property="id" column="id" />
-        <result property="name" column="name" />
-        <result property="extra" column="msg" typeHandler="com.reload.model.ExtraTypeHandler" />
+    <resultMap id="studentMap" type="com.reload.model.Student">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result property="extra" column="msg" typeHandler="com.reload.model.ExtraTypeHandler"/>
+        <!--<association property="extra" javaType="com.reload.model.Extra">-->
+            <!--<result property="msg" column="msg"/>-->
+        <!--</association>-->
+    </resultMap>
+    <resultMap id="userMap" type="com.reload.model.User">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <!--<result property="extra" column="msg" typeHandler="com.reload.model.ExtraTypeHandler" />-->
+        <!--<association property="extra" javaType="com.reload.model.Extra">-->
+        <!--<result property="msg" column="msg"/>-->
+        <!--</association>-->
+
+        <discriminator javaType="java.lang.String" column="msg">
+            <case value="xxx" resultMap="studentMap"/>
+        </discriminator>
+
     </resultMap>
 
 
@@ -17,7 +33,7 @@
           )
     </insert>
 
-    <select id="getAll" resultMap="studentMap">
+    <select id="getAll" resultMap="userMap">
         SELECT id,name,msg FROM student
     </select>
 
