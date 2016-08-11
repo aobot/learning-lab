@@ -1,6 +1,8 @@
-package com.reload.model
+package gson.test.ext
 
 import com.google.gson.*
+import gson.test.model.FlyHolder
+import gson.test.model.IFly
 
 import java.lang.reflect.Type
 

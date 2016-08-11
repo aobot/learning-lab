@@ -17,7 +17,7 @@
     </settings>
 
     <typeHandlers>
-        <typeHandler handler="com.reload.model.ExtraTypeHandler" />
+        <typeHandler handler="gson.test.dao.handler.FlyHolderTypeHandler" />
     </typeHandlers>
 
 

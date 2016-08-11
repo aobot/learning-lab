@@ -6,7 +6,7 @@
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <context:component-scan base-package="com.reload"/>
+    <context:component-scan base-package="com.reload,gson.test"/>
 
     <bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -23,20 +23,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="logAbandoned" value="true" />
     </bean>
 
-    <!--<bean class="com.reload.utils.ASqlSessionFactoryBean" id="sqlSessionFactory">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-        <!--<property name="mapperLocations" value="classpath*:reload/user-mapper.xml"/>-->
-        <!--<property name="configLocation" value="classpath:reload/myBatis-config.xml"/>-->
-    <!--</bean>-->
-
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath*:reload/*-mapper.xml"/>
+        <property name="mapperLocations" value="classpath*:gson/fly-mapper.xml"/>
         <property name="configLocation" value="classpath:reload/myBatis-config.xml"/>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.reload"/>
+        <property name="basePackage" value="gson.test"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

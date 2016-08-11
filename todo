@@ -1,6 +1,0 @@
-# learning-lab
-this is my toy code
-
-
-2016年 7月17日 星期日 11时32分44秒 CST
-mappedstatemant is ok , other property in configuration should be strictmap->concurrenthashmap is not done .not sure whether this modification will cause other side effect

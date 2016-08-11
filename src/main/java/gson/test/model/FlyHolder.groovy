@@ -1,4 +1,4 @@
-package com.reload.model
+package gson.test.model
 
 import groovy.transform.Canonical
 

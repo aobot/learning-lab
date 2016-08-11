@@ -1,4 +1,4 @@
-package com.reload.model;
+package gson.test.model.impl;
 
 /**
  * Created by aobot on 2016-08-11 10:20.

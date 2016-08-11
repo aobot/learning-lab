@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gson.test.dao.FlyLivingsDao">
+    <resultMap id="flyLivingsResultMap" type="gson.test.model.FlyLivings">
+        <result property="id" column="id"/>
+        <result property="holder" column="msg"
+                typeHandler="gson.test.dao.handler.FlyHolderTypeHandler"/>
+    </resultMap>
+
+    <insert id="add" parameterType="gson.test.model.FlyLivings">
+        insert into living( msg) VALUES ( #{holder,typeHandler=gson.test.dao.handler.FlyHolderTypeHandler})
+    </insert>
+    <select id="getAll" resultMap="flyLivingsResultMap">
+        SELECT id,msg from living
+    </select>
+
+
+</mapper>

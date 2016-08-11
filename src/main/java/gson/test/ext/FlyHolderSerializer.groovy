@@ -1,10 +1,11 @@
-package com.reload.model
+package gson.test.ext
 
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
+import gson.test.model.FlyHolder
 
 import java.lang.reflect.Type
 

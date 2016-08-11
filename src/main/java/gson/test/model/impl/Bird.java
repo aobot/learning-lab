@@ -1,4 +1,6 @@
-package com.reload.model;
+package gson.test.model.impl;
+
+import gson.test.model.IFly;
 
 /**
  * Created by aobot on 2016-08-11 10:19.
